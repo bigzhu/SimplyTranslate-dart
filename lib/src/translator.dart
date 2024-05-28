@@ -261,7 +261,8 @@ class SimplyTranslator {
       throw http.ClientException('Error ${data.statusCode}:\n\n ${data.body}', url);
     }
 
-    jsonData = jsonDecode(data.body);
+    // jsonData = jsonDecode(data.body);
+    jsonData = jsonDecode(utf8.decode(data.bodyBytes));
     if (jsonData == null) {
       throw http.ClientException('Error: Can\'t parse json data');
     }
