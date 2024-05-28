@@ -251,19 +251,22 @@ class SimplyTranslator {
     dynamic jsonData;
     url = Uri.https(_baseUrlSimply, _pathSimply);
     final data = await http.post(url, body: parameters).timeout(
-      const Duration(seconds: 5),
+      const Duration(seconds: 14),
       onTimeout: () {
+        print("error server: ${url.toString()} onTimeout");
         // Time has run out, do what you wanted to do.
         return http.Response('Error', 408); // Request Timeout response status code
       },
     );
     if (data.statusCode != 200) {
+      print("error server: ${url.toString()} data.statusCode=${data.statusCode}");
       throw http.ClientException('Error ${data.statusCode}:\n\n ${data.body}', url);
     }
 
     // jsonData = jsonDecode(data.body);
     jsonData = jsonDecode(utf8.decode(data.bodyBytes));
     if (jsonData == null) {
+      print("error server: ${url.toString()} jsonData == null");
       throw http.ClientException('Error: Can\'t parse json data');
     }
     if (jsonData['translated-text'] == null) {
@@ -409,16 +412,19 @@ class SimplyTranslator {
     final data = await http.get(url).timeout(
       const Duration(seconds: 5),
       onTimeout: () {
+        print("error server: ${url.toString()}");
         // Time has run out, do what you wanted to do.
         return http.Response('Error', 408); // Request Timeout response status code
       },
     );
     if (data.statusCode != 200) {
+      print("error server: ${url.toString()}");
       throw http.ClientException('Error ${data.statusCode}:\n\n ${data.body}', url);
     }
 
     jsonData = jsonDecode(data.body);
     if (jsonData == null) {
+      print("error server: ${url.toString()}");
       throw http.ClientException('Error: Can\'t parse json data');
     }
     return jsonData['translation'];
@@ -526,16 +532,19 @@ class SimplyTranslator {
     final data = await http.get(url).timeout(
       const Duration(seconds: 5),
       onTimeout: () {
+        print("error server: ${url.toString()}");
         // Time has run out, do what you wanted to do.
         return http.Response('Error', 408); // Request Timeout response status code
       },
     );
     if (data.statusCode != 200) {
+      print("error server: ${url.toString()}");
       throw http.ClientException('Error ${data.statusCode}:\n\n ${data.body}', url);
     }
 
     jsonData = jsonDecode(data.body);
     if (jsonData == null) {
+      print("error server: ${url.toString()}");
       throw http.ClientException('Error: Can\'t parse json data');
     }
     List<String> frequencyTranslations = [];
@@ -588,7 +597,7 @@ List<String> simplyInstances = [
   "trans_cloudcone.entube.app",
   "simplytranslate.org",
   "translate.birdcat.cafe",
-  "simplytranslate.pussthecat.org"
+  // "simplytranslate.pussthecat.org"
 ];
 // List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
 List<String> lingvaInstances = [
