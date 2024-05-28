@@ -583,11 +583,22 @@ class SimplyTranslator {
 ///list with instances
 List<String> simplyInstances = [
   "trans.entube.app",
-  // "simplytranslate.org",
-  // "translate.birdcat.cafe",
-  // "simplytranslate.pussthecat.org"
+  "trans_racknerd.entube.app",
+  "trans_awmbilisim.entube.app",
+  "trans_cloudcone.entube.app",
+  "simplytranslate.org",
+  "translate.birdcat.cafe",
+  "simplytranslate.pussthecat.org"
 ];
-List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
+// List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
+List<String> lingvaInstances = [
+  "lingva_racknerd.entube.app",
+  "lingva_contabo.entube.app",
+  "lingva_awmbilisim.entube.app",
+  "lingva_cloudcone.entube.app",
+  "translate.plausibility.cloud",
+  "lingva.ml",
+];
 
 ///Translation engines
 enum EngineType {
