@@ -177,7 +177,8 @@ class SimplyTranslator {
     if (!LanguageList.contains(lang)) {
       throw LanguageNotSupportedException(lang);
     }
-    var _baseUrl = 'simplytranslate.org';
+    // var _baseUrl = 'simplytranslate.org';
+    var _baseUrl = 'trans.entube.app';
     final _path = '/api/tts/';
     final parameters = {'engine': "google", 'lang': lang, 'text': sourceText};
 
