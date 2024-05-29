@@ -178,7 +178,7 @@ class SimplyTranslator {
       throw LanguageNotSupportedException(lang);
     }
     // var _baseUrl = 'simplytranslate.org';
-    var _baseUrl = 'trans.entube.app';
+    var _baseUrl = 'trans4contabo.entube.app';
     final _path = '/api/tts/';
     final parameters = {'engine': "google", 'lang': lang, 'text': sourceText};
 
@@ -591,20 +591,20 @@ class SimplyTranslator {
 
 ///list with instances
 List<String> simplyInstances = [
-  "trans.entube.app",
-  "trans_racknerd.entube.app",
-  "trans_awmbilisim.entube.app",
-  "trans_cloudcone.entube.app",
+  "trans4contabo.entube.app",
+  "trans4racknerd.entube.app",
+  "trans4awmbilisim.entube.app",
+  "trans4cloudcone.entube.app",
   "simplytranslate.org",
   "translate.birdcat.cafe",
   // "simplytranslate.pussthecat.org"
 ];
 // List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
 List<String> lingvaInstances = [
-  "lingva_racknerd.entube.app",
-  "lingva_contabo.entube.app",
-  "lingva_awmbilisim.entube.app",
-  "lingva_cloudcone.entube.app",
+  "lingva4racknerd.entube.app",
+  "lingva4contabo.entube.app",
+  "lingva4awmbilisim.entube.app",
+  "lingva4cloudcone.entube.app",
   "translate.plausibility.cloud",
   "lingva.ml",
 ];
