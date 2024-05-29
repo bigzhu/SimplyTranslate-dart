@@ -7,6 +7,8 @@ import 'package:http/http.dart' as http;
 import './langs/language.dart';
 part './model/translation.dart';
 
+const Duration TIME_OUT = const Duration(seconds: 15);
+
 ///
 /// This library is a Dart implementation of Simplytranslate API
 ///
@@ -55,7 +57,7 @@ class SimplyTranslator {
     for (int ret = 0; ret <= retries; ret++) {
       url = Uri.https(_baseUrlSimply, _pathSimply);
       final data = await http.post(url, body: parameters).timeout(
-        const Duration(seconds: 5),
+        TIME_OUT,
         onTimeout: () {
           // Time has run out, do what you wanted to do.
           return http.Response('Error', 408); // Request Timeout response status code
@@ -193,7 +195,7 @@ class SimplyTranslator {
     url = Uri.parse("https://" + _baseUrlLingva + "/api/v1/audio/" + lang + "/" + text);
     nextLingvaInstance();
     final data = await http.get(url).timeout(
-      const Duration(seconds: 5),
+      TIME_OUT,
       onTimeout: () {
         // Time has run out, do what you wanted to do.
         return http.Response('Error', 408); // Request Timeout response status code
@@ -218,7 +220,7 @@ class SimplyTranslator {
     };
     var en = jsonEncode(graphqlQuery);
     final data = await http.post(url, body: en).timeout(
-      const Duration(seconds: 5),
+      TIME_OUT,
       onTimeout: () {
         // Time has run out, do what you wanted to do.
         return http.Response('Error', 408); // Request Timeout response status code
@@ -251,7 +253,7 @@ class SimplyTranslator {
     dynamic jsonData;
     url = Uri.https(_baseUrlSimply, _pathSimply);
     final data = await http.post(url, body: parameters).timeout(
-      const Duration(seconds: 14),
+      TIME_OUT,
       onTimeout: () {
         print("error server: ${url.toString()} onTimeout");
         // Time has run out, do what you wanted to do.
@@ -410,7 +412,7 @@ class SimplyTranslator {
       nextLingvaInstance();
     }
     final data = await http.get(url).timeout(
-      const Duration(seconds: 5),
+      TIME_OUT,
       onTimeout: () {
         print("error server: ${url.toString()}");
         // Time has run out, do what you wanted to do.
@@ -450,7 +452,7 @@ class SimplyTranslator {
       await Future.delayed(const Duration(seconds: 2));
     }
     final data = await http.post(url, body: en).timeout(
-      const Duration(seconds: 5),
+      TIME_OUT,
       onTimeout: () {
         // Time has run out, do what you wanted to do.
         return http.Response('Error', 408); // Request Timeout response status code
@@ -530,7 +532,7 @@ class SimplyTranslator {
       nextLingvaInstance();
     }
     final data = await http.get(url).timeout(
-      const Duration(seconds: 5),
+      TIME_OUT,
       onTimeout: () {
         print("error server: ${url.toString()}");
         // Time has run out, do what you wanted to do.
