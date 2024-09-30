@@ -198,8 +198,7 @@ class SimplyTranslator {
     if (!LanguageList.contains(lang)) {
       throw LanguageNotSupportedException(lang);
     }
-    // var _baseUrl = 'simplytranslate.org';
-    var _baseUrl = 'trans4awmbilisim.entube.app';
+    var _baseUrl = 'simplytranslate.org';
     final _path = '/api/tts/';
     final parameters = {'engine': "google", 'lang': lang, 'text': sourceText};
 
@@ -657,7 +656,8 @@ class SimplyTranslator {
 ///list with instances
 List<String> simplyInstances = [
   "trans4racknerd.entube.app",
-  "trans4awmbilisim.entube.app",
+  // https://trans4awmbilisim.entube.app/api/translate/ data.statusCode=408
+  // "trans4awmbilisim.entube.app",
   "trans4cloudcone.entube.app",
   "simplytranslate.org",
   "translate.birdcat.cafe",
