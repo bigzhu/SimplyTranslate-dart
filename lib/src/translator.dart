@@ -77,6 +77,7 @@ class SimplyTranslator {
       );
 
       if (data.statusCode != 200) {
+        print("error server: ${url.toString()}");
         nextSimplyInstance();
         exeption = http.ClientException(
             'Error ${data.statusCode}:\n\n ${data.body}', url);
@@ -660,7 +661,7 @@ List<String> simplyInstances = [
   // "trans4awmbilisim.entube.app",
   "trans4cloudcone.entube.app",
   "simplytranslate.org",
-  "translate.birdcat.cafe",
+  // "translate.birdcat.cafe",
   // "simplytranslate.pussthecat.org"
 ];
 // List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
