@@ -4,11 +4,11 @@ description: Free and unlimited Google translations and TTS. Fast and private.
 #author: Marvin Perzi
 homepage: https://github.com/Persie0/SimplyTranslate-dart
 dependencies:
-  http:
+  http: 1.2.2
 
 dev_dependencies:
-  lints:
-  test: any
+  lints: 5.0.0
+  test: 1.25.8
 
 environment:
   sdk: ">=2.15.0 <4.0.0"
