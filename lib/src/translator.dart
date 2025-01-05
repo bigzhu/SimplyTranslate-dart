@@ -657,13 +657,11 @@ class SimplyTranslator {
 ///list with instances
 List<String> simplyInstances = [
   "trans4racknerd.entube.app",
-  "trans4cloudcone.entube.app",
+  "trans4racknerd2.entube.app",
   "simplytranslate.org",
 ];
 // List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
 List<String> lingvaInstances = [
-  "lingva4racknerd.entube.app",
-  "lingva4cloudcone.entube.app",
   "translate.plausibility.cloud",
   "lingva.ml",
 ];
