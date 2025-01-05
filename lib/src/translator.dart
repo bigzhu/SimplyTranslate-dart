@@ -657,17 +657,12 @@ class SimplyTranslator {
 ///list with instances
 List<String> simplyInstances = [
   "trans4racknerd.entube.app",
-  // https://trans4awmbilisim.entube.app/api/translate/ data.statusCode=408
-  // "trans4awmbilisim.entube.app",
   "trans4cloudcone.entube.app",
   "simplytranslate.org",
-  // "translate.birdcat.cafe",
-  // "simplytranslate.pussthecat.org"
 ];
 // List<String> lingvaInstances = ["translate.plausibility.cloud", "lingva.ml"];
 List<String> lingvaInstances = [
   "lingva4racknerd.entube.app",
-  "lingva4awmbilisim.entube.app",
   "lingva4cloudcone.entube.app",
   "translate.plausibility.cloud",
   "lingva.ml",
